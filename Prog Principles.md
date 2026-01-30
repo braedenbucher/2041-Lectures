@@ -1,17 +1,15 @@
 *Last Updated 1/28*
 # Applicative vs. Imperative
 
-Most programming languages you have seen so far are **Imperative**. It comes from Latin *Imperator*, meaning something along the lines of *emperor*. Since emperors often gave orders such as "do this" and "do that", imperative languages work similarly. ==They issue commands to change variables==. Most common languages (C, Java, etc) are imperative by design.
+Most programming languages you have seen so far are **Imperative**. It comes from Latin *Imperator*, meaning something along the lines of *emperor*. Since emperors often gave orders such as "do this" and "do that", imperative languages work similarly. They issue commands to change variables. Most common languages (C, Java, etc) are imperative by design.
 
-**Applicative** languages compute values by calling functions. In these languages, pretty much everything is a function. ==Rather than mutable variables, program entities are represented by **values bound to names** and **compositions of function calls**.== While initially unintuitive, without variables:
+**Applicative** languages compute values by calling functions. In these languages, pretty much everything is a function. Rather than mutable variables, program entities are represented by **values bound to names** and **compositions of function calls**. While initially unintuitive, without variables:
 1. Problems can be reduced to simpler form because recursive definitions mirror mathematical definitions directly.
 2. Common imperative issues and bugs can be eliminated because pure functions avoid shared mutable state, aliasing, and order-dependent behavior.
 
 ## C vs. OCaml
 The factorial function is defined as:
-$$
-0! = 1\qquad n! = n \times (n-1)\times (n-2)\dots 2 \times 1
-$$
+
 C *(Imperative)*
 ```c
 int fac(int n) {
@@ -97,7 +95,7 @@ When you type something and end it with `;;`, OCaml:
 1. Parses it
 2. Type-checks it
 3. Evaluates it
-4. ==Prints the result and its type==
+4. Prints the result and its type
 
 ```ocaml
 # 2 + 2 ;;
@@ -119,7 +117,7 @@ This is not “assigning 4 to a variable” in the imperative sense. It is close
 
 There is no mutation, no memory cell being updated, no reassignment (unless you explicitly use mutable constructs). You can think of `let` as naming a value, expression, or function.
 
-Functions are also ==one-input, one-output==.
+Functions are also one-input, one-output.
 
 ```ocaml
 val fac : int -> int = <fun>
@@ -158,7 +156,7 @@ int list
 string list
 'a list (* polymorphic list *)
 ```
-Internally, they're either ==empty, or an element + another list==.
+Internally, they're either empty, or an element + another list.
 
 ```Ocaml
 type 'a list =
@@ -172,7 +170,7 @@ A list is basically `head :: tail`. The head is the first element, the tail is t
 1 :: [2;3] (* [1; 2; 3] *)
 ```
 
-The operator is an expression, and has a type `(::) : 'a -> 'a list -> 'a list`. Because of the formating of `head :: tail`, all lists are just ==cons operations on an empty list: `[1;2;3] = 1 :: 2 :: 3 :: []`.==
+The operator is an expression, and has a type `(::) : 'a -> 'a list -> 'a list`. Because of the formating of `head :: tail`, all lists are just cons operations on an empty list: `[1;2;3] = 1 :: 2 :: 3 :: []`.
 
 ## Pattern Matching
 You can use `match lst with` to "if-else" list contents:
@@ -232,7 +230,7 @@ append [1;2] [3;4]
 
 # OCaml functions
 ## Multiple Arguments
-OCaml thinksthat all functions take 1 argument ($t_{1}$) and return 1 value ($t_{2}$). The type of the function is then $t_{1}\to t_{2}$. ==To model a function that takes in more than one argument, every function type before the last is an argument.== 
+OCaml thinksthat all functions take 1 argument t1 and return 1 value t2. The type of the function is then t1->t2. To model a function that takes in more than one argument, every function type before the last is an argument. 
 
 ```
 t1 -> t2 -> t3 -> v (return value)
@@ -243,7 +241,7 @@ argument types
 For everything inbetween, a function of 1 argument is a function that returns another function.
 
 ## List terminology
-**First class objects** can be passed as an argument, return it from a function, assign it to a 'variable'. And make it part of a data structure. ==These are all properties of functions in applicative languages==. **Second class objects** are just all objects that aren't first class.
+**First class objects** can be passed as an argument, return it from a function, assign it to a 'variable'. And make it part of a data structure. These are all properties of functions in applicative languages. **Second class objects** are just all objects that aren't first class.
 
 Lists in OCaml are **immutable**, meaning we cannot change the list directly. So list operations with multiple lists must:
 - Copy at least part of a list
