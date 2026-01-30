@@ -1,4 +1,4 @@
-*Last Updated 1/28*
+*Last Updated 1/30*
 # Applicative vs. Imperative
 
 Most programming languages you have seen so far are **Imperative**. It comes from Latin *Imperator*, meaning something along the lines of *emperor*. Since emperors often gave orders such as "do this" and "do that", imperative languages work similarly. They issue commands to change variables. Most common languages (C, Java, etc) are imperative by design.
@@ -252,34 +252,3 @@ Lists in OCaml are **immutable**, meaning we cannot change the list directly. So
 ## Internal Helper Functions
 
 
-
-
-## Tail Recursion
-
-
-
-Types  
-Pattern matching  
-Expressions  
-Environments  
-Closures  
-Curried functions  
-Higher-order functions  
-Continuation passing  
-Generators  
-Objects with functions as parts  
-Object oriented programming  
-Memoization  
-Evaluation strategies  
-Eager vs. lazy evaluation  
-Organizing large programs  
-Modules  
-Signatures  
-Lisp  
-Grammars  
-Scanners  
-Parsers  
-Interpreters  
-More interpreters  
-Metaprogramming  
-Macros
